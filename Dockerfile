@@ -38,4 +38,4 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 EXPOSE 80
 
 # Start Apache and run migrations
-CMD php /var/www/html/artisan migrate:fresh --force && apache2-foreground
+CMD php /var/www/html/artisan migrate --force && apache2-foreground
