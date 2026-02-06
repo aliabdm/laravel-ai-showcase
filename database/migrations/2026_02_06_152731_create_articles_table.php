@@ -28,22 +28,14 @@ return new class extends Migration
             $table->text('content');
 
             if ($vectorAvailable) {
-                // Use vector type if extension is available
-                $table->vector('embedding', dimensions: 768);
+                $table->vector('embedding', dimensions: 768)->index();
             } else {
-                // Fallback to TEXT for mock mode
                 $table->text('embedding')->nullable();
+                $table->index('embedding'); 
             }
+
 
             $table->timestamps();
-
-            // Create index only if vector is available
-            if ($vectorAvailable) {
-                $table->vector('embedding')->index();
-            } else {
-                // Create regular text index for fallback
-                $table->index('embedding');
-            }
         });
     }
 
