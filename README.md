@@ -602,7 +602,7 @@ This project is open-sourced software licensed under the **MIT License**. See [L
 
 ```bash
 # 1. Clone and setup
-git clone <repo>
+git clone https://github.com/aliabdm/laravel-ai-showcase.git
 cd laravel-ai-showcase
 composer install
 cp .env.example .env
